@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TOKEN OR TOMB: ASHES OF TELDRASSIL — Rulebook</title>
+
+  <!-- Social share -->
+  <meta property="og:title" content="Token or Tomb: Ashes of Teldrassil — Rulebook" />
+  <meta property="og:description" content="30 days. 380,000 gold. Earn the Token… or get deleted. Night Elf Hunter hardcore gold challenge." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#6a45ff" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-0: #0b0a13;
+      --bg-1: #120e24;
+      --card: rgba(255,255,255,0.06);
+      --card-border: rgba(255,255,255,0.12);
+      --text: #e9e7ff;
+      --muted: #c7c2ffcc;
+      --accent: #b892ff;
+      --accent-2: #6a45ff;
+      --success: #78ffa8;
+      --danger: #ff6b9f;
+      --warning: #ffd36b;
+      --shadow: 0 10px 25px rgba(0,0,0,0.35);
+      --hr: linear-gradient(90deg, transparent, #6a45ff66, #b892ff99, #6a45ff66, transparent);
+    }
+    body.light {
+      --bg-0: #faf8ff;
+      --bg-1: #ece7ff;
+      --card: rgba(255,255,255,0.75);
+      --card-border: rgba(106,69,255,0.25);
+      --text: #1a1440;
+      --muted: #3d316e;
+      --shadow: 0 12px 26px rgba(26,20,64,0.18);
+    }
+
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 80% -10%, #6a45ff25, transparent 55%),
+        radial-gradient(1000px 600px at -10% 20%, #b892ff18, transparent 60%),
+        linear-gradient(180deg, var(--bg-1), var(--bg-0));
+      line-height: 1.6;
+      letter-spacing: 0.2px;
+    }
+
+    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 20px 110px; }
+
+    /* Header / hero */
+    .hero {
+      position: relative;
+      border: 1px solid var(--card-border);
+      background: linear-gradient(175deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      backdrop-filter: blur(6px);
+      box-shadow: var(--shadow);
+      border-radius: 18px;
+      overflow: hidden;
+      padding: 28px;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(800px 260px at 15% 0%, #ffffff22, transparent 60%),
+        radial-gradient(1400px 500px at 120% 10%, #6a45ff22, transparent 70%);
+      pointer-events: none;
+    }
+    .kicker {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--card-border);
+      background: var(--card);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .title {
+      margin: 14px 0 8px;
+      font-family: Cinzel, serif;
+      font-weight: 700;
+      font-size: clamp(28px, 4.6vw, 46px);
+      line-height: 1.1;
+      letter-spacing: 0.5px;
+    }
+    .subtitle { margin: 0 0 18px; font-size: 16px; color: var(--muted); }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 12px; border-radius: 12px;
+      background: var(--card); border: 1px solid var(--card-border);
+      font-weight: 600; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+    }
+    .badge.success { color: var(--success); }
+    .badge.danger { color: var(--danger); }
+    .badge.warn { color: var(--warning); }
+
+    /* Top nav */
+    .nav { display: flex; flex-wrap: wrap; gap: 10px 14px; margin: 18px 0 0; }
+    .nav a {
+      text-decoration: none; color: var(--text);
+      border: 1px solid var(--card-border); background: var(--card);
+      padding: 8px 12px; border-radius: 999px; font-weight: 600; font-size: 14px;
+    }
+    .nav a:hover { outline: 2px solid #b892ff55; }
+
+    /* Section card */
+    section {
+      margin-top: 28px;
+      border: 1px solid var(--card-border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border-radius: 18px;
+      padding: 22px 22px 8px;
+      box-shadow: var(--shadow);
+    }
+    h2 {
+      font-family: Cinzel, serif;
+      font-weight: 700;
+      font-size: clamp(22px, 3.2vw, 30px);
+      margin: 0 0 6px;
+      letter-spacing: 0.4px;
+    }
+    .eyebrow {
+      color: var(--accent); font-weight: 700; font-size: 12px;
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; display: inline-block;
+    }
+    .hr { height: 1px; background: var(--hr); margin: 14px 0 10px; border: none; }
+
+    /* Lists */
+    .rules { display: grid; gap: 12px; margin: 10px 0 18px; padding-left: 0; list-style: none; }
+    .rules li {
+      display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start;
+      background: var(--card); border: 1px solid var(--card-border);
+      padding: 12px 12px; border-radius: 14px;
+    }
+    .rules .icon {
+      display: grid; place-items: center; width: 34px; height: 34px;
+      border-radius: 10px; background: linear-gradient(180deg, #6a45ff66, #b892ff55);
+      color: #fff; font-size: 18px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15);
+    }
+    .rules h3 { margin: 0 0 2px; font-size: 16px; line-height: 1.3; }
+    .muted { color: var(--muted); }
+
+    /* Footer / hook / socials */
+    .hook {
+      text-align: center; margin-top: 28px; padding: 20px;
+      border: 1px dashed var(--card-border); border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      font-weight: 700;
+    }
+    .socials {
+      margin-top: 28px; padding: 24px;
+      border: 1px solid var(--card-border); border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow);
+    }
+    .socials h2 {
+      text-align: center; font-family: Cinzel, serif; font-size: 24px; margin-bottom: 12px;
+    }
+    .socials p { text-align: center; margin: 0 0 18px; color: var(--muted); }
+    .cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 18px; border-radius: 999px;
+      background: var(--card); border: 1px solid var(--card-border);
+      font-weight: 700; color: var(--accent); text-decoration: none;
+      box-shadow: var(--shadow);
+    }
+    .cta:hover { outline: 2px solid #b892ff55; }
+
+    /* Floating theme toggle */
+    .toggle, .top {
+      position: fixed; z-index: 10; border-radius: 999px;
+      padding: 10px 14px; border: 1px solid var(--card-border);
+      background: var(--card); color: var(--text); font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+    .toggle { right: 16px; bottom: 16px; cursor: pointer; }
+    .top { left: 16px; bottom: 16px; text-decoration: none; }
+
+    /* Small caps pill */
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid var(--card-border); background: var(--card);
+      padding: 6px 10px; border-radius: 999px; font-weight: 600; font-size: 13px;
+    }
+
+    a { color: var(--accent); }
+    a:hover { color: var(--accent-2); }
+  </style>
+</head>
+<body>
+  <a id="top"></a>
+  <div class="wrap">
+    <header class="hero">
+      <span class="kicker">🌙 Night Elf Hardcore • 🏹 Hunter • 💀 Permadelete</span>
+      <h1 class="title">TOKEN OR TOMB: <span style="color:var(--accent)">ASHES OF TELDRASSIL</span></h1>
+      <p class="subtitle">*30 Days. 380,000 Gold. Earn the Token… or get deleted.* Sassy. Savage. Sparkly. 💋</p>
+
+      <div class="badges" role="list">
+        <span class="badge warn">⏳ 30 Days</span>
+        <span class="badge">🪙 380,000g Target</span>
+        <span class="badge danger">🗑️ Permadelete on Fail</span>
+        <span class="badge success">🌿 Zone-Locked: Teldrassil</span>
+      </div>
+
+      <nav class="nav" aria-label="Sections">
+        <a href="#core">Core Rules</a>
+        <a href="#hunter">Hunter Rules</a>
+        <a href="#death">Death Taxes</a>
+        <a href="#countdown">Countdown</a>
+        <a href="#endgame">Endgame</a>
+        <a href="https://www.youtube.com/@CandyBlk95" target="_blank" rel="noopener" aria-label="Watch on YouTube">▶️ Watch</a>
+      </nav>
+    </header>
+
+    <!-- Core Rules -->
+    <section id="core" aria-labelledby="core-title">
+      <span class="eyebrow">The Sacred Core Rules</span>
+      <h2 id="core-title">🌳 Zone, Token, and Temptation</h2>
+      <hr class="hr" />
+      <ul class="rules">
+        <li>
+          <div class="icon">🌿</div>
+          <div>
+            <h3>Zone-Locked, Baby</h3>
+            <p class="muted">Chained to <strong>Teldrassil</strong> like a bad situationship. No Darkshore dalliances. No Stormwind splurges. It’s me, the tree, and whatever scraps I can flip into fortune.</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">💀</div>
+          <div>
+            <h3>The Token Gauntlet</h3>
+            <p class="muted">I’ve got <strong>30 real days</strong> to earn <strong>380,000 gold</strong>. Win → I buy a WoW Token and strut out like <em>Elune’s favorite sugar baby</em>. Fail → I <strong>delete my Hunter live</strong>. Poof. Elf dust.</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">🚫</div>
+          <div>
+            <h3>No Sugar Daddies</h3>
+            <p class="muted">No mail alts. No guild banks. No trades. If it didn’t come from Teldrassil, it’s not allowed in my coinpurse.</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">📚</div>
+          <div>
+            <h3>Knowledge is Power, Hunny</h3>
+            <p class="muted">If I loot/buy a <strong>recipe, pattern, or item appearance</strong>: If I can learn it → I <em>must</em> learn it now. If I can’t yet → it’s <strong>banked</strong> until I can. Duplicates or forever-unusable? Only then may I sell it. I’m stacking <em>brains and beauty</em>. 💅</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">🗑️</div>
+          <div>
+            <h3>Vendor Trash Hustle</h3>
+            <p class="muted">At least once, I go full broke-girl fantasy: earn gold <strong>only from greys</strong>. Yes, squirrel tails are high finance now.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Hunter Specific -->
+    <section id="hunter" aria-labelledby="hunter-title">
+      <span class="eyebrow">Hunter Rules of Spice</span>
+      <h2 id="hunter-title">🏹 Pets, Licenses, and Delicious Suffering</h2>
+      <hr class="hr" />
+      <ul class="rules">
+        <li>
+          <div class="icon">💕</div>
+          <div>
+            <h3>Pet Happiness (via <span class="pill">Petship Addon</span>)</h3>
+            <p class="muted">Pets must stay <strong>Happy</strong>. If they slip to <em>Unhappy</em> → penalty: lose <strong>5%</strong> of my gold <em>or</em> vendor a green. We’re raising emotional support animals here, besties.</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">☠️</div>
+          <div>
+            <h3>Graveyard Stable = License to Love</h3>
+            <p class="muted">Dead pets are <strong>permanently stabled</strong>. No revives. Each corpse eats a slot forever. When the stable fills with tombstones → <strong>Beast Mastery revoked</strong>. I must respec to MM/Survival. Elune judges: “Bad pet mom. No more fluff for you.”</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">🍗</div>
+          <div>
+            <h3>Pet Tribute Ritual</h3>
+            <p class="muted">Every new tame needs a <strong>bonding ceremony</strong>: buy a full stack of their favorite food and <em>feed it all</em> until they’re Happy. Only then is the bond sealed. 💋</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">🪽</div>
+          <div>
+            <h3>Mount & Flying Lock</h3>
+            <p class="muted">To unlock riding: <strong>buy a fresh mount</strong> with Teldrassil-earned gold and <strong>delete it</strong>. Sacrifice accepted. <br>
+            <strong>Flying is forbidden until Level 35</strong> — then buy & delete <em>another</em> mount to unlock the skies. Broke phoenix time. 🔥</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">🧵</div>
+          <div>
+            <h3>Professions</h3>
+            <p class="muted">Hunters must always keep <strong>Skinning</strong>. Second slot is free choice (Herbalism or Leatherworking = peak Night Elf hustler chic).</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Death Taxes -->
+    <section id="death" aria-labelledby="death-title">
+      <span class="eyebrow">Consequences (Yum)</span>
+      <h2 id="death-title">💀 Death Taxes</h2>
+      <hr class="hr" />
+      <ul class="rules">
+        <li>
+          <div class="icon">🧝‍♀️</div>
+          <div>
+            <h3>My Death</h3>
+            <p class="muted">Resurrection costs a <strong>10% gold tax</strong> from my <em>pocket</em>. (The bank is sacred. For now.)</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">🐺</div>
+          <div>
+            <h3>Pet Death</h3>
+            <p class="muted">Straight to the <strong>Graveyard Stable</strong>, permanently. No excuses. No do-overs.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Countdown -->
+    <section id="countdown" aria-labelledby="countdown-title">
+      <span class="eyebrow">Tick Tock, Baby</span>
+      <h2 id="countdown-title">⏳ The Countdown</h2>
+      <hr class="hr" />
+      <ul class="rules">
+        <li>
+          <div class="icon">📅</div>
+          <div>
+            <h3>30 Days. That’s It.</h3>
+            <p class="muted">Every episode tracks the clock: <em>“Day 12: 7,230g earned… 372,770g to go 😭.”</em> Will I clutch the token, or will the ashes claim me?</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Endgame -->
+    <section id="endgame" aria-labelledby="endgame-title">
+      <span class="eyebrow">The Fate of a Night Elf</span>
+      <h2 id="endgame-title">💎 Endgame</h2>
+      <hr class="hr" />
+      <ul class="rules">
+        <li>
+          <div class="icon">🌙</div>
+          <div>
+            <h3>Win</h3>
+            <p class="muted">I buy the Token, my Hunter lives, and I walk out of Teldrassil with <strong>30 days of game time</strong> like <em>Elune’s pampered sugar baby</em>. ✨</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">🪦</div>
+          <div>
+            <h3>Fail</h3>
+            <p class="muted">I <strong>delete my Night Elf live</strong>. No mercy. No “oopsies.” Just Delete → Accept. 💔</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">👑</div>
+          <div>
+            <h3>Optional Season 2: Tragic Heir</h3>
+            <p class="muted">If I fail but earn at least <strong>170,000g</strong> (half the Token), I may roll a new Night Elf in Darkshore with that gold as <em>inheritance</em>. Soap-opera drama unlocked.</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="hook">“<strong>30 days.</strong> <strong>380,000 gold.</strong> <em>Token or Tomb: Ashes of Teldrassil.</em>” 💋</div>
+    </section>
+
+    <!-- Footer / socials -->
+    <footer class="socials" aria-labelledby="watch-title">
+      <h2 id="watch-title">📺 Watch the Challenge</h2>
+      <p>Every squirrel tail, every pet funeral, every coin closer to the Token. Catch it all on my channel 💋</p>
+      <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+        <a class="cta" href="https://www.youtube.com/@CandyBlk95" target="_blank" rel="noopener" aria-label="Subscribe on YouTube">
+          ▶️ Subscribe on YouTube
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <button class="toggle" id="themeBtn" aria-label="Toggle theme">🌓 Theme</button>
+  <a class="top" href="#top" aria-label="Back to top">⬆️ Top</a>
+
+  <script>
+    // Simple theme toggle
+    const btn = document.getElementById('themeBtn');
+    const key = 'tot-theme';
+    function applyTheme(t) { document.body.classList.toggle('light', t === 'light'); }
+    function stored() { return localStorage.getItem(key) || 'dark'; }
+    applyTheme(stored());
+    btn.addEventListener('click', () => {
+      const next = stored() === 'light' ? 'dark' : 'light';
+      localStorage.setItem(key, next);
+      applyTheme(next);
+    });
+  </script>
+</body>
+</html>
