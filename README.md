@@ -26,7 +26,7 @@ If I fail… I press **Delete Character → Accept**. *On camera.* 💀
 
 ---
 
-## 🪽 Mobility, but make it earned
+## 🐎 Mobility, but make it earned
 - **Mount Unlock:** Buy a fresh mount with Teldrassil gold… then **delete** it. Sacrifice accepted. Now I may ride.
 - **Flying Lock:** **No flying before level 35.** To unlock, buy and delete *another* mount. Then we rise like a broke phoenix. 🔥
 
