@@ -195,7 +195,10 @@
       display: inline-flex; align-items: center; gap: 8px;
       border: 1px solid var(--card-border); background: var(--card);
       padding: 6px 10px; border-radius: 999px; font-weight: 600; font-size: 13px;
+      color: var(--accent);
+      text-decoration: none;
     }
+    .pill:hover { outline: 1px solid #b892ff55; }
 
     a { color: var(--accent); }
     a:hover { color: var(--accent-2); }
@@ -232,50 +235,49 @@
       <h2 id="core-title">🌳 Zone, Token, and Temptation</h2>
       <hr class="hr" />
       <ul class="rules">
-  <li>
-    <div class="icon">🌿</div>
-    <div>
-      <h3>Zone-Locked, Baby</h3>
-      <p class="muted">Chained to <strong>Teldrassil</strong> like a bad situationship. No Darkshore dalliances. No Stormwind splurges. It’s me, the tree, and whatever scraps I can flip into fortune.</p>
-    </div>
-  </li>
-  <li>
-    <div class="icon">💀</div>
-    <div>
-      <h3>The Token Gauntlet</h3>
-      <p class="muted">I’ve got <strong>30 real days</strong> to earn <strong>380,000 gold</strong>. Win → I buy a WoW Token and strut out like <em>Elune’s favorite sugar baby</em>. Fail → I <strong>delete my Hunter live</strong>. Poof. Elf dust.</p>
-    </div>
-  </li>
-  <li>
-    <div class="icon">🚫</div>
-    <div>
-      <h3>No Sugar Daddies</h3>
-      <p class="muted">No mail alts. No guild banks. No trades. If it didn’t come from Teldrassil, it’s not allowed in my coinpurse.</p>
-    </div>
-  </li>
-  <li>
-    <div class="icon">📚</div>
-    <div>
-      <h3>Knowledge is Power, Hunny</h3>
-      <p class="muted">If I loot/buy a <strong>recipe, pattern, or item appearance</strong>: If I can learn it → I <em>must</em> learn it now. If I can’t yet → it’s <strong>banked</strong> until I can. Duplicates or forever-unusable? Only then may I sell it. I’m stacking <em>brains and beauty</em>. 💅</p>
-    </div>
-  </li>
-  <li>
-    <div class="icon">🗑️</div>
-    <div>
-      <h3>Vendor Trash Hustle</h3>
-      <p class="muted">At least once, I go full broke-girl fantasy: earn gold <strong>only from greys</strong>. Yes, squirrel tails are high finance now.</p>
-    </div>
-  </li>
-  <li>
-    <div class="icon">🩲</div>
-    <div>
-      <h3>The Rags to Riches Rule</h3>
-      <p class="muted">All starting gear must be <strong>vendored immediately</strong> at creation. Until I loot, craft, or buy my first real upgrade, I strut around in nothing but bra and pants. Weapons stay (we’re broke, not suicidal 💀). First gear drop = the start of riches.</p>
-    </div>
-  </li>
-</ul>
-
+        <li>
+          <div class="icon">🌿</div>
+          <div>
+            <h3>Zone-Locked, Baby (via <a class="pill" href="https://www.curseforge.com/wow/addons/zonelocked" target="_blank" rel="noopener">ZoneLocked Addon</a>)</h3>
+            <p class="muted">Chained to <strong>Teldrassil</strong> like a bad situationship. No Darkshore dalliances. No Stormwind splurges. It’s me, the tree, and whatever scraps I can flip into fortune.</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">💀</div>
+          <div>
+            <h3>The Token Gauntlet</h3>
+            <p class="muted">I’ve got <strong>30 real days</strong> to earn <strong>380,000 gold</strong>. Win → I buy a WoW Token and strut out like <em>Elune’s favorite sugar baby</em>. Fail → I <strong>delete my Hunter live</strong>. Poof. Elf dust.</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">🚫</div>
+          <div>
+            <h3>No Sugar Daddies</h3>
+            <p class="muted">No mail alts. No guild banks. No trades. If it didn’t come from Teldrassil, it’s not allowed in my coinpurse.</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">📚</div>
+          <div>
+            <h3>Knowledge is Power, Hunny</h3>
+            <p class="muted">If I loot/buy a <strong>recipe, pattern, or item appearance</strong>: If I can learn it → I <em>must</em> learn it now. If I can’t yet → it’s <strong>banked</strong> until I can. Duplicates or forever-unusable? Only then may I sell it. I’m stacking <em>brains and beauty</em>. 💅</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">🗑️</div>
+          <div>
+            <h3>Vendor Trash Hustle</h3>
+            <p class="muted">At least once, I go full broke-girl fantasy: earn gold <strong>only from greys</strong>. Yes, squirrel tails are high finance now.</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">🩲</div>
+          <div>
+            <h3>The Rags to Riches Rule</h3>
+            <p class="muted">All starting gear must be <strong>vendored immediately</strong> at creation. Until I loot, craft, or buy my first real upgrade, I strut around in nothing but bra and pants. Weapons stay (we’re broke, not suicidal 💀). First gear drop = the start of riches.</p>
+          </div>
+        </li>
+      </ul>
     </section>
 
     <!-- Hunter Specific -->
@@ -287,7 +289,7 @@
         <li>
           <div class="icon">💕</div>
           <div>
-            <h3>Pet Happiness (via <span class="pill">Petship Addon</span>)</h3>
+            <h3>Pet Happiness (via <a class="pill" href="https://www.curseforge.com/wow/addons/petship" target="_blank" rel="noopener">Petship Addon</a>)</h3>
             <p class="muted">Pets must stay <strong>Happy</strong>. If they slip to <em>Unhappy</em> → penalty: lose <strong>5%</strong> of my gold <em>or</em> vendor a green. We’re raising emotional support animals here, besties.</p>
           </div>
         </li>
@@ -376,7 +378,7 @@
           </div>
         </li>
         <li>
-          <div class="icon">🪦</div>
+          <div class="icon">❌</div>
           <div>
             <h3>Fail</h3>
             <p class="muted">I <strong>delete my Night Elf live</strong>. No mercy. No “oopsies.” Just Delete → Accept. 💔</p>
